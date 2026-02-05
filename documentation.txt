@@ -1,0 +1,80 @@
+1. Dataset: https://www.kaggle.com/datasets/ahmedmohamed2003/cafe-sales-dirty-data-for-cleaning-training
+
+2. Audit:
+a. Messy Data:
+- Inconsistent casing (coffee, Coffee, COFFEE)
+- Wrong data types (Total_Sales as string)
+- Missing values in business-critical columns
+- Logical errors (negative quantity, price mismatch)
+- Date & time chaos
+- Redundant columns
+- Category leakage (same item under multiple categories)
+b. Cleaned Data:
+- Initial Data Rows: 10k & Final Data Rows: 7774
+
+3. Business Context:
+“This dataset represents daily transactional sales data from a café chain across multiple branches.”
+Key business goals:
+- Revenue tracking
+- Product performance
+- Time-based demand
+- Category contribution
+- Branch-level comparison (if applicable)
+
+4. Python code:
+- Loaded necessary libraries such as pandas, numpy and dataset.
+- Replaced 'Unknown' & 'Errors' by NaN
+- Converting columns into specific data types.
+- Removing invalid transactions.
+- Fixing & Recalculating Total Spent Column.
+- Handling Missing Payment Method & Location by filling 'Unknown'.
+- Drop rows having missing date.
+
+5. PowerBI
+a. Loaded the cleaned dataset
+b. DAX:
+- Total Revenue = SUM(cafe_sales[Total Spent])
+- Total Transactions = DISTINCTCOUNT(cafe_sales[Transaction ID])
+- Total Quantity = SUM(cafe_sales[Quantity])
+- AOV = DIVIDE([Total Revenue], [Total Transactions])
+- Item Url, Payment Method Url, Pickup Url 
+c. Charts:
+- Line chart – Total Revenue by Month
+- Bar Chart - Top 5 Items by Revenue
+- Treemap → Revenue by Location
+- Stacked Bar → Revenue by Payment Method
+- Scatter Plot -> Location-wise Sales & Pricing Analysis
+
+6. Business Driven Insights & Recommendations
+a. Quarter 4 Generates the Highest Revenue
+Data Evidence: Revenue peaks in Q4 (~17.7K), compared to Q3 (~17.1K).
+Insight: There is a clear year-end demand surge, indicating seasonal buying behavior.
+Recommendation: Increase staffing, inventory, and promotional activities during Q4 to maximize revenue. Similar offers can be extended into early Q1 to sustain momentum.
+b. Food Items Outperform Beverages in Revenue Contribution
+Data Evidence:
+Salad: 15K
+Sandwich: 12K
+Smoothie: 12K
+Coffee: 6K, Tea: 4K
+Insight: Customers generate higher revenue from meal-based items compared to traditional beverages.
+Recommendation: Promote meal combos (e.g., Sandwich + Coffee) and prioritize food items in menu promotions, especially during lunch hours.
+c. “Unknown” Location Accounts for the Highest Revenue
+Data Evidence:
+Unknown: 27.63K
+In-Store: 21.32K
+Takeaway: 20.51K
+Insight: A significant portion of revenue is not mapped to a specific location, indicating a data capture or classification gap.
+Recommendation: Improve POS data validation to reduce “Unknown” entries and reclassify them into meaningful operational channels for better decision-making.
+d. Balanced Use of Payment Methods with High “Unknown” Share
+Data Evidence:
+Unknown: 22K
+Cash: 16K
+Digital Wallet: 16K
+Credit Card: 16K
+Insight: Customers use multiple payment methods evenly, but a large share remains uncategorized.
+Recommendation: Enforce mandatory payment method selection at checkout and promote digital payments through loyalty rewards or discounts.
+e. Takeaway Orders Show Higher Pricing Efficiency
+Data Evidence: Takeaway shows higher average unit price despite lower total quantity compared to In-Store.
+Insight: Takeaway customers are less price-sensitive and willing to pay more per unit.
+Recommendation: Introduce premium packaging, add-ons, or slightly higher pricing for takeaway orders to increase profit margins without reducing demand.
+
