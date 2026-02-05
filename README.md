@@ -69,24 +69,18 @@ Recommendation: Enforce mandatory payment selection and promote digital payments
 Insight: Higher unit price despite lower quantity
 Recommendation: Introduce premium packaging or add-ons for takeaway orders.
 
-Author: Jyoti Gupta
-Linked-In: https://www.linkedin.com/in/jyotigupta-da/
 🎯 Key Learnings
-
 Data quality directly impacts business decisions
-
 Cleaning logic must be business-driven, not just technical
-
 A well-designed single-page dashboard can deliver powerful insights
-
 Analytics is as much about storytelling as it is about numbers
 
 📎 Files in This Repository
-
 code.ipynb → Python data cleaning & audit
+Cafe Dashboard Image
+Documentation
 
-final_clean_cafe_sales.csv → Cleaned dataset
-
-Cafe Dashboard.pbix → Power BI dashboard file
+Author: Jyoti Gupta
+Linked-In: https://www.linkedin.com/in/jyotigupta-da/
 
 documentation.txt → Project notes & insights
